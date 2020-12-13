@@ -6,8 +6,10 @@ CURRENTDIR=$(pwd)
 TOOL=$2
 #change to input directory
 cd $1
+mkdir -p alignment
 #concatenate all fasta files in the sequence directory
-cat ./*.fasta > seq.fasta
+cat ./*.fasta > ./alignment/seq.fasta
+cd ./alignment
 #gets the name of the directory
 NAME=$(echo $1 | rev | cut -d "/" -f2)
 

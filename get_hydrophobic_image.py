@@ -114,3 +114,20 @@ elif sys.argv[1] == "N":
     os.system('mkdir -p ./images/N')
     cmd.png("./images/N/nucleocapsid_protein.png")
     cmd.quit()
+
+#checks if the input is the protease protein
+elif sys.argv[1] == "P":
+    cmd.load("./pdb/7bro.pdb")
+    yrb()
+    cmd.hide("all")
+    cmd.show("surface")
+    cmd.set_view ("\
+         0.041574337,   -0.369270533,   -0.928391814,\
+         0.679595172,   -0.670687377,    0.297200412,\
+        -0.732407928,   -0.643286884,    0.223070890,\
+         0.000000000,    0.000000000, -186.578689575,\
+        12.397642136,  -13.213432312,    5.029144287,\
+       147.100067139,  226.057312012,  -20.000000000")
+    os.system('mkdir -p ./images/P')
+    cmd.png("./images/P/protease_protein.png")
+    cmd.quit()
