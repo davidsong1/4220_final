@@ -2,6 +2,8 @@
 import fasta_to_paml
 import sys
 import os
+import re
+import csv
 from pathlib import Path
 
 #get the alignment file
@@ -28,7 +30,7 @@ with open("codeml.ctl", 'r') as f:
     lines[3] = "      outfile = " + output_file + "    * main result file name\n"
 with open("codeml.ctl", 'w') as f:
     f.writelines(lines)
-os.system("codeml")
+#os.system("codeml")
 os.system("mv rst " + path + "/dnds/" + prefix + "/")
 #remove extra output files
 os.system("rm 2NG.dN")
@@ -37,3 +39,33 @@ os.system("rm 2NG.t")
 os.system("rm lnf")
 os.system("rm rst1")
 os.system("rm rub")
+
+#read dn/ds info
+with open(path + "/dnds/" + prefix + "/rst") as f:
+    lines = f.readlines()
+    #initializes model 1 list
+    model_1 = []
+    model_2 = []
+    model_1_bool = True
+    for line in lines:
+        if "Model 2" in line:
+            model_1_bool = False
+            continue
+        if re.match(r'\s*\d', line) and model_1_bool:
+            rows = line.split()
+            del rows[4]
+            rows[4] = rows[4][:-1]
+            model_1.append(rows)
+        if "Positively" in line:
+            break
+        if re.match(r'\s*\d', line) and not model_1_bool:
+            rows = line.split()
+            del rows[5]
+            rows[5] = rows[5][:-1]
+            model_2.append(rows)
+    model_1_fields = ["site_pos", "ref_AA", "class_1_prob", "class_2_prob", "most_prob_class", "mean_dN/dS"]
+    model_2_fields = ["site_pos", "ref_AA", "class_1_prob", "class_2_prob", "class_3_prob", "most_prob_class", "mean_dN/dS", "prob_dN/dS>1"]
+    with open(path + "/dnds/" + prefix + "/" + prefix + ".site_dnds.csv", "w") as f:
+            write = csv.writer(f)
+            write.writerow(model_1_fields)
+            write.writerows(model_1)
