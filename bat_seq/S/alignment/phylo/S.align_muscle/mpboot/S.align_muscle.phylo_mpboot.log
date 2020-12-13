@@ -1,0 +1,3 @@
+Name of file: bat_seq/S/alignment/phylo/S.align_muscle/mpboot/S.align_muscle.phylo_mpboot.tre
+Command: mpboot -s bat_seq/S/alignment/S.align_muscle.fasta -pre bat_seq/S/alignment/phylo/S.align_muscle/mpboot/S.align_muscle.phylo_mpboot
+Date: Sun 13 Dec 2020 01:28:58 PM CST

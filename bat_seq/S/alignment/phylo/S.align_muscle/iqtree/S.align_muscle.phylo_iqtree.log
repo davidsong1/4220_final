@@ -1,0 +1,3 @@
+Name of file: bat_seq/S/alignment/phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree.tre
+Command: iqtree -s bat_seq/S/alignment/S.align_muscle.fasta -pre bat_seq/S/alignment/phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree
+Date: Sun 13 Dec 2020 01:29:19 PM CST
