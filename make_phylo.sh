@@ -41,4 +41,35 @@ then
         CMD="fasttree -nt -noml $ALIGN > ./phylo/$BASE/$TOOL/$PRE.tre"
         generate_log_and_display "$CMD"
     fi
+elif [[ $TOOL == iqtree ]]
+then
+    mkdir -p phylo/$BASE/$TOOL
+    #create a tmp directory
+    mkdir -p tmp
+    #check if options GTR and JC are provided
+    if [[ $3 == -m ]] && [[ $4 == GTR || $4 == JC ]]
+    then
+        #run iqtree and store output in tmp
+        iqtree -s $ALIGN -m $4 -pre tmp/$PRE
+        #move the treefile to the appropriate folder
+        mv tmp/$PRE.treefile phylo/$BASE/$TOOL/$PRE.tre
+        #delete tmp folder
+        rm -r tmp
+        CMD="iqtree -s $ALIGN -m $4 -pre tmp/$PRE"
+        generate_log_and_display "$CMD"
+    else
+        #run iqtree on default
+        iqtree -s $ALIGN -pre tmp/$PRE
+        #move the treefile to the appropriate folder
+        mv tmp/$PRE.treefile phylo/$BASE/$TOOL/$PRE.tre
+        #delete tmp folder
+        rm -r tmp
+        CMD="iqtree -s $ALIGN -pre tmp/$PRE"
+        generate_log_and_display "$CMD"
+    fi
+elif [[ $TOOL == mpboot ]]
+then
+    mkdir -p phylo/$BASE/$TOOL
+    #run mpboot default settings
+    mpboot -s $ALIGN -pre $PRE
 fi
