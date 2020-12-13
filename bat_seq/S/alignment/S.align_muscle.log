@@ -1,0 +1,5 @@
+Name of alignment file: S.align_muscle.fasta
+Command: muscle -in seq.fasta -out S.align_muscle.fasta
+Date: Sun 13 Dec 2020 12:57:37 AM CST
+Number of sequences: 10
+Number of sites: 39040

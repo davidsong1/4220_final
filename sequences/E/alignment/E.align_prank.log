@@ -1,0 +1,5 @@
+Name of alignment file: E.align_prank.fasta
+Command: prank -gaprate=0.025 -gapext=0.75 -d=seq.fasta -o=E.align_prank.fasta
+Date: Sat 12 Dec 2020 10:29:39 PM CST
+Number of sequences: 4
+Number of sites: 928
