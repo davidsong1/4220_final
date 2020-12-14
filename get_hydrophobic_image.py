@@ -10,7 +10,7 @@ pymol.finish_launching()
 # creates images directory to store pngs
 os.system('mkdir -p images')
 
-# function to highlight both hydrophobicty and charge in protein structures
+# function to highlight both hydrophobicty and charge in protein structures (Hagemans et. al)
 def yrb(selection='all'):
     # sets colors
 	cmd.remove("hydro")
