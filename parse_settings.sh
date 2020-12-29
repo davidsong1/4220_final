@@ -2,7 +2,8 @@
 
 settings=$1
 step=$2
-
+#gets the extension
+extension="${step##*.}"
 #iterate through the settings file
 cat $settings | while read line
 do
@@ -21,7 +22,13 @@ do
             command+=("$var")
         done
         #runs the script with the arguments
-        . ../$step "${command[@]}"
+        if [[ $extension == "sh" ]]
+        then
+            . ../$step "${command[@]}"
+        elif [[ $extension == "py" ]]
+        then
+            python ../$step "${command[@]}"
+        fi
     fi
 done
 

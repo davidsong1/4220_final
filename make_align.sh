@@ -11,9 +11,7 @@ mkdir -p alignment
 cat ./*.fasta > ./alignment/seq.fasta
 cd ./alignment
 #gets the name of the directory
-NAME=$(echo $1 | rev | cut -d "/" -f2)
-
-#get the filename
+NAME=$(echo $1 | rev | cut -d "/" -f2 | rev)
 FILENAME="$NAME.align_$TOOL.fasta"
 
 #function to generate log files
@@ -102,3 +100,4 @@ else
 fi
 rm seq.fasta
 cd $CURRENTDIR
+mv $1/alignment $CURRENTDIR

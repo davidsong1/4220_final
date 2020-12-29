@@ -1,0 +1,12 @@
+ | MW064314 S                                                                   
+ |                                                                              
+ | MW190194 S                                                                   
+=|                                                                              
+ | MW190821 S                                                                   
+ |                                                                              
+ | MW264435 S                                                                   
+                                                                                
+ |                                                                              
+ 0                                                                              
+ substitutions/site                                                             
+                                                                                
