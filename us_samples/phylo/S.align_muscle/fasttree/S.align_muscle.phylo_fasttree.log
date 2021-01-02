@@ -1,0 +1,3 @@
+Name of file: phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre
+Command: fasttree -nt -noml -gtr alignment/S.align_muscle.fasta > phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre
+Date: Sat 02 Jan 2021 04:36:43 PM CST

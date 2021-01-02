@@ -1,0 +1,9 @@
+script,settings
+get_seq.sh,accession=/home/davidsong/4220_final/bat_accession.txt;sequence_dir=bat_samples;overwrite=true;
+make_align.sh,sequence_dir=bat_samples/S/;align_tool=muscle;align_tool_options=-gapopen;value=2;
+make_phylo.sh,align_file=alignment/S.align_muscle.fasta;phylo_tool=fasttree;phylo_tool_options=-gtr;
+make_mol_stats.py,align_file=alignment/S.align_muscle.fasta;
+make_dnds.py,align_file=alignment/S.align_muscle.fasta;phylo_file=phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre;
+get_hydrophobic_image.py,protein=S;
+generate_hydrophilicity_curve.py,fasta1=bat_samples/S/DQ084200_S.fasta;fasta2=bat_samples/S/DQ022305_S.fasta;start=400;end=450;
+make_results.py,sequence_dir=bat_samples;

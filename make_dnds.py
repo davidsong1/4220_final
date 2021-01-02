@@ -19,7 +19,7 @@ output_file = "dnds/" + prefix + "/" + prefix + ".paml.tre"
 os.system("mkdir -p dnds")
 os.system("mkdir -p dnds/" + prefix)
 #copy the codeml file
-#os.system("cp codeml.ctl " + path + "/dnds/" + prefix)
+os.system("cp ../codeml.ctl ./")
 fasta_to_paml.convert_paml(alignment, "dnds/" + prefix+"/")
 
 #opens the codeml.ctl file

@@ -1,0 +1,8 @@
+./get_seq.sh /home/davidsong/4220_final/bat_accession.txt bat_samples true
+./make_align.sh bat_samples/S/ muscle -gapopen 2
+./make_phylo.sh alignment/S.align_muscle.fasta fasttree -gtr
+./make_mol_stats.py alignment/S.align_muscle.fasta
+./make_dnds.py alignment/S.align_muscle.fasta phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre
+./get_hydrophobic_image.py S
+./generate_hydrophilicity_curve.py bat_samples/S/DQ084200_S.fasta bat_samples/S/DQ022305_S.fasta 400 450
+./make_results.py bat_samples

@@ -1,3 +1,0 @@
-Name of file: phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree.tre
-Command: iqtree -s alignment/S.align_muscle.fasta -pre phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree
-Date: Sat 02 Jan 2021 02:07:53 PM CST
