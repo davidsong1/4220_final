@@ -6,4 +6,5 @@ make_mol_stats.py,align_file=alignment/S.align_muscle.fasta;
 make_dnds.py,align_file=alignment/S.align_muscle.fasta;phylo_file=phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre;
 #make_results.py,sequence_dir=US_samples;
 get_hydrophobic_image.py,protein=S;
-#feature2.py,setting2=my_feature2_settings.txt;parameter2=50;
+generate_hydrophilicity_curve.py,fasta1=/home/davidsong/4220_final/output/US_samples/S/MW064314_S.fasta;fasta2=/home/davidsong/4220_final/output/US_samples/S/MW190194_S.fasta;start=400;end=450;
+make_results.py,sequence_dir=US_samples;

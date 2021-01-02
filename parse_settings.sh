@@ -25,14 +25,15 @@ do
         if [[ $extension == "sh" ]]
         then
             . ../$step "${command[@]}"
+            echo "./$step ${command[@]}" >> commands.txt
         elif [[ $extension == "py" ]]
         then
             python ../$step "${command[@]}"
+            echo "./$step ${command[@]}" >> commands.txt
         fi
     fi
 done
 
 
 
-#./make_dnds.py bat_seq/S/alignment/S.align_muscle.fasta bat_seq/S/alignment/phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre 
 

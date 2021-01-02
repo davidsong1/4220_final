@@ -33,5 +33,13 @@ fi
 #../parse_settings.sh ../$settings make_dnds.py
 
 #parse settings for get_hydrophobic_image.py
-echo "Running get_hydrophobic_image.py"
-../parse_settings.sh ../$settings get_hydrophobic_image.py
+#echo "Running get_hydrophobic_image.py"
+#../parse_settings.sh ../$settings get_hydrophobic_image.py
+
+#parse settings for generate_hydrophilicity_curve.py
+#echo "Running generate_hydrophilicity_curve.py"
+#../parse_settings.sh ../$settings generate_hydrophilicity_curve.py
+
+#parse settings for make_results.py
+echo "Runngin make_results.py"
+../parse_settings.sh ../$settings make_results.py
