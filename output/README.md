@@ -1,4 +1,88 @@
+./get_seq.sh /home/davidsong/4220_final/accession.txt US_samples true
+US_samples/all_S.fasta
+US_samples/all_ORF3a.fasta
+US_samples/N/MW190821_N.fasta
+US_samples/N/MW264435_N.fasta
+US_samples/N/MW190194_N.fasta
+US_samples/N/MW064314_N.fasta
+US_samples/all_ORF7a.fasta
+US_samples/all_ORF7b.fasta
+US_samples/all_M.fasta
+US_samples/ORF10/MW264435_ORF10.fasta
+US_samples/ORF10/MW064314_ORF10.fasta
+US_samples/ORF10/MW190821_ORF10.fasta
+US_samples/ORF10/MW190194_ORF10.fasta
+US_samples/all_ORF10.fasta
+US_samples/ORF1ab/MW190821_ORF1ab.fasta
+US_samples/ORF1ab/MW190194_ORF1ab.fasta
+US_samples/ORF1ab/MW264435_ORF1ab.fasta
+US_samples/ORF1ab/MW064314_ORF1ab.fasta
+US_samples/ORF7a/MW064314_ORF7a.fasta
+US_samples/ORF7a/MW190194_ORF7a.fasta
+US_samples/ORF7a/MW264435_ORF7a.fasta
+US_samples/ORF7a/MW190821_ORF7a.fasta
+US_samples/M/MW190821_M.fasta
+US_samples/M/MW190194_M.fasta
+US_samples/M/MW064314_M.fasta
+US_samples/M/MW264435_M.fasta
+US_samples/MW064314.fasta
+US_samples/all_ORF6.fasta
+US_samples/S/MW064314_S.fasta
+US_samples/S/MW190821_S.fasta
+US_samples/S/alignment/S.align_muscle.log
+US_samples/S/alignment/S.align_muscle.fasta
+US_samples/S/MW190194_S.fasta
+US_samples/S/MW264435_S.fasta
+US_samples/MW190821.fasta
+US_samples/all_E.fasta
+US_samples/all_ORF1ab.fasta
+US_samples/ORF6/MW264435_ORF6.fasta
+US_samples/ORF6/MW064314_ORF6.fasta
+US_samples/ORF6/MW190821_ORF6.fasta
+US_samples/ORF6/MW190194_ORF6.fasta
+US_samples/MW264435.fasta
+US_samples/E/MW064314_E.fasta
+US_samples/E/MW264435_E.fasta
+US_samples/E/MW190821_E.fasta
+US_samples/E/MW190194_E.fasta
+US_samples/ORF3a/MW190821_ORF3a.fasta
+US_samples/ORF3a/MW264435_ORF3a.fasta
+US_samples/ORF3a/MW064314_ORF3a.fasta
+US_samples/ORF3a/MW190194_ORF3a.fasta
+US_samples/MW190194.fasta
+US_samples/all_N.fasta
+US_samples/ORF8/MW190194_ORF8.fasta
+US_samples/ORF8/MW064314_ORF8.fasta
+US_samples/ORF8/MW190821_ORF8.fasta
+US_samples/ORF8/MW264435_ORF8.fasta
+US_samples/all_ORF8.fasta
+US_samples/ORF7b/MW264435_ORF7b.fasta
+US_samples/ORF7b/MW190194_ORF7b.fasta
+US_samples/ORF7b/MW064314_ORF7b.fasta
+US_samples/ORF7b/MW190821_ORF7b.fasta
+./make_align.sh US_samples/S/ muscle -gapopen 2
+alignment/S.align_muscle.log
+alignment/S.align_muscle.fasta
+./make_phylo.sh alignment/S.align_muscle.fasta iqtree -gtr
+phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree.tre
+phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree.log
+phylo/S.align_muscle/iqtree/S.align_muscle.phylo_iqtree.nw_display.txt
+phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.log
+phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.nw_display.txt
+phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre
+./make_mol_stats.py alignment/S.align_muscle.fasta
+mol_stats/S.align_muscle.site_GC.csv
+mol_stats/S.align_muscle.site_phylo_inf.csv
+mol_stats/S.align_muscle.site_codon.csv
+mol_stats/S.align_muscle.seq_codon.csv
+mol_stats/S.align_muscle.seq_GC.csv
+mol_stats/S.align_muscle.codon_usage.csv
+./make_dnds.py alignment/S.align_muscle.fasta phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre
+dnds/S.align_muscle/S.align_muscle.site_dnds.csv
+dnds/S.align_muscle/S.align_muscle.paml.tre
+dnds/S.align_muscle/rst
+dnds/S.align_muscle/S.align_muscle.paml
+./get_hydrophobic_image.py S
+./generate_hydrophilicity_curve.py /home/davidsong/4220_final/output/US_samples/S/MW064314_S.fasta /home/davidsong/4220_final/output/US_samples/S/MW190194_S.fasta 400 450
 images/hydrophilicity_curve.png
 images/S/spike_protein.png
-./make_results.py US_samples
-yo./testttsts
