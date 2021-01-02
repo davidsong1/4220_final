@@ -3,7 +3,7 @@ get_seq.sh,accession=/home/davidsong/4220_final/accession.txt;sequence_dir=US_sa
 make_align.sh,sequence_dir=US_samples/S/;align_tool=muscle;align_tool_options=-gapopen;value=2;
 make_phylo.sh,align_file=alignment/S.align_muscle.fasta;phylo_tool=iqtree;phylo_tool_options=-gtr;
 make_mol_stats.py,align_file=alignment/S.align_muscle.fasta;
-#make_dnds.py,align_file=covid_align_mafft.fasta;phylo_file=covid_align_mafft_fasttree.tre;
+make_dnds.py,align_file=alignment/S.align_muscle.fasta;phylo_file=phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre;
 #make_results.py,sequence_dir=US_samples;
-#feature1.sh,setting1=my_feature1_settings.txt;parameter1=20;
+get_hydrophobic_image.py,protein=S;
 #feature2.py,setting2=my_feature2_settings.txt;parameter2=50;

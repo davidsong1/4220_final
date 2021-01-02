@@ -14,13 +14,13 @@ phylo = sys.argv[2]
 prefix = Path(alignment).stem
 #get path
 path = os.path.dirname(alignment)
-output_file = path + "/dnds/" + prefix + "/" + prefix + ".paml.tre"
+output_file = "dnds/" + prefix + "/" + prefix + ".paml.tre"
 #create dnds directory
-os.system("mkdir -p " + path + "/dnds")
-os.system("mkdir -p " + path + "/dnds/" + prefix)
+os.system("mkdir -p dnds")
+os.system("mkdir -p dnds/" + prefix)
 #copy the codeml file
 #os.system("cp codeml.ctl " + path + "/dnds/" + prefix)
-fasta_to_paml.convert_paml(alignment, path+"/dnds/" + prefix+"/")
+fasta_to_paml.convert_paml(alignment, "dnds/" + prefix+"/")
 
 #opens the codeml.ctl file
 with open("codeml.ctl", 'r') as f:
@@ -30,8 +30,8 @@ with open("codeml.ctl", 'r') as f:
     lines[3] = "      outfile = " + output_file + "    * main result file name\n"
 with open("codeml.ctl", 'w') as f:
     f.writelines(lines)
-#os.system("codeml")
-os.system("mv rst " + path + "/dnds/" + prefix + "/")
+os.system("codeml")
+os.system("mv rst dnds/" + prefix + "/")
 #remove extra output files
 os.system("rm 2NG.dN")
 os.system("rm 2NG.dS")
@@ -41,7 +41,7 @@ os.system("rm rst1")
 os.system("rm rub")
 
 #read dn/ds info
-with open(path + "/dnds/" + prefix + "/rst") as f:
+with open("dnds/" + prefix + "/rst") as f:
     lines = f.readlines()
     #initializes model 1 list
     model_1 = []
@@ -65,7 +65,7 @@ with open(path + "/dnds/" + prefix + "/rst") as f:
             model_2.append(rows)
     model_1_fields = ["site_pos", "ref_AA", "class_1_prob", "class_2_prob", "most_prob_class", "mean_dN/dS"]
     model_2_fields = ["site_pos", "ref_AA", "class_1_prob", "class_2_prob", "class_3_prob", "most_prob_class", "mean_dN/dS", "prob_dN/dS>1"]
-    with open(path + "/dnds/" + prefix + "/" + prefix + ".site_dnds.csv", "w") as f:
+    with open("dnds/" + prefix + "/" + prefix + ".site_dnds.csv", "w") as f:
             write = csv.writer(f)
             write.writerow(model_1_fields)
             write.writerows(model_1)

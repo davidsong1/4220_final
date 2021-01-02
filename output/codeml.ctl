@@ -1,7 +1,7 @@
-      seqfile = output/alignment/S.align_muscle.fasta    * sequence data file name
-     treefile = output/phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre    * tree structure file name
+      seqfile = alignment/S.align_muscle.fasta    * sequence data file name
+     treefile = phylo/S.align_muscle/fasttree/S.align_muscle.phylo_fasttree.tre    * tree structure file name
 
-      outfile = output/alignment/dnds/S.align_muscle/S.align_muscle.paml.tre    * main result file name
+      outfile = dnds/S.align_muscle/S.align_muscle.paml.tre    * main result file name
         noisy = 3   * 0,1,2,3,9: how much rubbish on the screen
       verbose = 0   * 1: detailed output, 0: concise output
       runmode = 0   * 0: user tree;  1: semi-automatic;  2: automatic

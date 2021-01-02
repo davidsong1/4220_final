@@ -25,5 +25,13 @@ fi
 #../parse_settings.sh ../$settings make_phylo.sh
 
 #parse settings for make_mol_stats.py
-echo "Running make_mol_stats.py"
-../parse_settings.sh ../$settings make_mol_stats.py
+#echo "Running make_mol_stats.py"
+#../parse_settings.sh ../$settings make_mol_stats.py
+
+#parse settings for make_dnds.py
+#echo "Running make_dnds.py"
+#../parse_settings.sh ../$settings make_dnds.py
+
+#parse settings for get_hydrophobic_image.py
+echo "Running get_hydrophobic_image.py"
+../parse_settings.sh ../$settings get_hydrophobic_image.py

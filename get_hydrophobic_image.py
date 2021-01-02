@@ -52,7 +52,7 @@ def yrb(selection='all'):
 # checks if the argument is the envelope protein
 if sys.argv[1] == "E":
     #loads in the pdb file
-    cmd.load("./pdb/7k3g.pdb")
+    cmd.load("../pdb/7k3g.pdb")
     #calls the coloring function
     yrb()
     #shows the surface
@@ -83,7 +83,7 @@ if sys.argv[1] == "E":
 
 #checks if the input is the spike protein
 elif sys.argv[1] == "S":
-    cmd.load("./pdb/6vxx.pdb")
+    cmd.load("../pdb/6vxx.pdb")
     yrb()
     cmd.hide("all")
     cmd.show("surface")
@@ -100,7 +100,7 @@ elif sys.argv[1] == "S":
 
 #checks if the input is the nucleocapsid protein
 elif sys.argv[1] == "N":
-    cmd.load("./pdb/6wzo.pdb")
+    cmd.load("../pdb/6wzo.pdb")
     yrb()
     cmd.hide("all")
     cmd.show("surface")
