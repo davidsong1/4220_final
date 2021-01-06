@@ -1,0 +1,5 @@
+Name of alignment file: S.align_muscle.fasta
+Command: muscle -in seq.fasta -out S.align_muscle.fasta -gapopen 2
+Date: Wed 06 Jan 2021 09:40:12 AM CST
+Number of sequences: 4
+Number of sites: 15544
